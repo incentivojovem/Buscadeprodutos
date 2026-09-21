@@ -14,3 +14,7 @@ Digite código, CNPJ, código de barras ou nome/descrição. Se houver um cadast
 exibe os resultados encontrados e o botão "Editar dados". Ao editar, os dados existentes são carregados
 no formulário e as alterações são gravadas no mesmo documento do Firestore, preservando os campos extras.
 O sistema também verifica duplicidade de código/documento antes de salvar.
+
+
+CORREÇÃO DE SINCRONIZAÇÃO DA PESQUISA
+A busca agora descobre os campos diretamente dos documentos do Firestore, sem depender da posição dos headers no metadata. Isso permite pesquisar e imprimir registros cadastrados manualmente mesmo quando o metadata ainda não foi atualizado. A leitura também mantém fallback para toda a coleção quando a consulta do grupo default estiver vazia.
